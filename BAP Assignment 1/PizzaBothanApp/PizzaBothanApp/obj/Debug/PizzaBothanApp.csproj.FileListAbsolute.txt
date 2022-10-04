@@ -1,0 +1,26 @@
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\bin\Debug\PizzaBothanApp.exe.config
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\bin\Debug\PizzaBothanApp.exe
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\bin\Debug\PizzaBothanApp.pdb
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.PizzaBothanForm.resources
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.Properties.Resources.resources
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.exe
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.pdb
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.Properties.LoginPanel.resources
+\\Mac\Home\Desktop\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.Properties.LoginPagePanel.resources
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\bin\Debug\PizzaBothanApp.exe.config
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\bin\Debug\PizzaBothanApp.exe
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\bin\Debug\PizzaBothanApp.pdb
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.PizzaBothanForm.resources
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.Properties.LoginPanel.resources
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.Properties.Resources.resources
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.Properties.LoginPagePanel.resources
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.exe
+\\Mac\Home\Desktop\Desktop folders\C# projects\BAP Assignment 1\PizzaBothanApp\PizzaBothanApp\obj\Debug\PizzaBothanApp.pdb
