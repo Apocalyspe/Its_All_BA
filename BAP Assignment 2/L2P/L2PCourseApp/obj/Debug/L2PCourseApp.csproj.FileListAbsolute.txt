@@ -1,0 +1,11 @@
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\bin\Debug\L2PCourseApp.exe.config
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\bin\Debug\L2PCourseApp.exe
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\bin\Debug\L2PCourseApp.pdb
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.Form1.resources
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.Properties.Resources.resources
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.exe
+\\Mac\Home\Desktop\Desktop folders\C# Assignments\BAP Assignment 2\L2P\L2PCourseApp\obj\Debug\L2PCourseApp.pdb
