@@ -53,8 +53,8 @@
             this.BookButton = new System.Windows.Forms.Button();
             this.DisplayButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ResultLabel = new System.Windows.Forms.Label();
             this.DiscountedPriceLabel = new System.Windows.Forms.Label();
+            this.ResultLabel = new System.Windows.Forms.Label();
             this.DetailPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -342,14 +342,6 @@
             this.panel3.Size = new System.Drawing.Size(1291, 490);
             this.panel3.TabIndex = 3;
             // 
-            // ResultLabel
-            // 
-            this.ResultLabel.AutoSize = true;
-            this.ResultLabel.Location = new System.Drawing.Point(68, 53);
-            this.ResultLabel.Name = "ResultLabel";
-            this.ResultLabel.Size = new System.Drawing.Size(0, 25);
-            this.ResultLabel.TabIndex = 4;
-            // 
             // DiscountedPriceLabel
             // 
             this.DiscountedPriceLabel.AutoSize = true;
@@ -357,6 +349,14 @@
             this.DiscountedPriceLabel.Name = "DiscountedPriceLabel";
             this.DiscountedPriceLabel.Size = new System.Drawing.Size(0, 25);
             this.DiscountedPriceLabel.TabIndex = 5;
+            // 
+            // ResultLabel
+            // 
+            this.ResultLabel.AutoSize = true;
+            this.ResultLabel.Location = new System.Drawing.Point(68, 53);
+            this.ResultLabel.Name = "ResultLabel";
+            this.ResultLabel.Size = new System.Drawing.Size(0, 25);
+            this.ResultLabel.TabIndex = 4;
             // 
             // Form1
             // 
@@ -366,6 +366,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.DetailPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "L2P Ltd.";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -39,7 +39,7 @@ namespace L2PCourseApp
         int TotalBookings = 0, TotalDiscountedBookings = 0, TotalAttendees = 0;
         decimal TotalBookingValue = 0, TotalEnrollmentFees = 0, TotalLodgingFees= 0, TotalOptionsValue = 0;
 
-        // Display button variables for bookiing
+        // Display button variables for booking
         string Location = "", Course = ""; int TrainingDays = 0;
         int CourseIndex, LocationIndex, Attendees;
         decimal PerCourseFees = 0, PerDayLodgingFees = 0, LodgingFees = 0, OptionalCost = 0, BookingValue = 0, EnrollmentCost = 0;
@@ -48,23 +48,29 @@ namespace L2PCourseApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Form load handling
             BookButton.Enabled = false;
             SummaryButton.Enabled = false;
         }
 
         private void DisplayButton_Click(object sender, EventArgs e)
         {
-
+            // Checking if Course list box is item is selected
             if (CourseListBox.SelectedIndex != -1)
             {
+                // Checking if Location list box is item is selected
                 if (LocationsListBox.SelectedIndex != -1)
                 {
+                    // Getting the index of selected item in listboxes
                     CourseIndex = CourseListBox.SelectedIndex;
                     LocationIndex = CourseListBox.SelectedIndex;
 
                     try
                     {
+                        // Parsing the number of Attendees
                         Attendees = int.Parse(AttendeesTextBox.Text);
+
+                        // Case handling for each item in course list box
                         switch(CourseIndex)
                         {
                             case 0: 
@@ -99,6 +105,7 @@ namespace L2PCourseApp
                                 break;
                         }
 
+                        // Case handling for each item in location list box
                         switch (LocationIndex)
                         {
                             case 0:
@@ -131,21 +138,22 @@ namespace L2PCourseApp
                                 break;
                         }
 
-                        //Course cost calculation
+                        //Course and Lodging cost calculation for current booking
                         EnrollmentCost = Attendees * PerCourseFees;
                         LodgingFees = Attendees * TrainingDays * PerDayLodgingFees;
 
-                        // Check for Optional cost
+                        // Check for Optional cost with a private function and calculate the total 
                         decimal UpgradeCost = IsRadioButtonClicked();
                         OptionalCost = Attendees * UpgradeCost;
 
+                        // Checking for discount
                         if (Attendees >= 3 && UpgradeCost > 0)
                         {
                             IsDiscountApplied = true;
                         }
 
 
-                        //Total booking value computation
+                        //Current booking value computation (Discount OR Non-Discount)
                         if (IsDiscountApplied)
                         {
                             BookingValue = (EnrollmentCost + (Attendees * PerDayLodgingFees * TrainingDays) + OptionalCost) - 
@@ -159,16 +167,21 @@ namespace L2PCourseApp
                             BookingValue = ((Attendees * PerCourseFees) + (Attendees * PerDayLodgingFees * TrainingDays) + OptionalCost);
                         }
 
-                        // Certificate check
+                        /* Certificate check if selected
+                         * Assumption: Certificate cost is seperately added and 
+                         *             is not included in the discounted price if applied
+                        */
                         if (DigiCertCheckBox.Checked == true)
                         {
                             BookingValue += Attendees * DIGI_CERT_PRICE;
                         }
 
+                        // Handling the buttons visibility
                         DetailPanel.Enabled = false;
                         BookButton.Enabled = true;
                         DisplayButton.Enabled = false;
 
+                        // Displaying the current booking's stats for the user 
                         ResultLabel.Text = "\n" + "Selected Course : " + Course + "\n" + "Location: " + Location + "\n" + "Training Duration : " +
                         TrainingDays + "\n" + "Enrollment Cost: " + "€" + EnrollmentCost.ToString() + "\n" + "Lodging Cost for booking : "
                         + "€" + LodgingFees + "\n" + "Number Of Attendands: " + Attendees + "\n" + "Additional upgrades (Suite Upgrade/Certificate): " + "€" +
@@ -191,10 +204,15 @@ namespace L2PCourseApp
             }
         }
 
+        /*  
+         *  Event Handler for Book button click
+         */
         private void BookButton_Click(object sender, EventArgs e)
         {
+            // Displaying the confirmation dialog box to user
             DialogResult dialogResult = MessageBox.Show("Do you want to confirm the booking?", "User confirmation", MessageBoxButtons.YesNo);
 
+            // Checking the user input for booking
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("Selected Course : " + Course + "\n" + "Selected Location : " + Location + "\n" + "Total Booking value : " + BookingValue, "Booking Confirmed!!", MessageBoxButtons.OK);
@@ -217,11 +235,17 @@ namespace L2PCourseApp
             DetailPanel.Enabled = true;
         }
 
+        /*  
+         *  Event Handler for Exit button click
+         */
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /*  
+         *  Event Handler for Clear button click
+         */
         private void ClearButton_Click(object sender, EventArgs e)
         {
             ResultLabel.Text = "";
@@ -238,6 +262,9 @@ namespace L2PCourseApp
             DisplayButton.Enabled = true;
         }
 
+        /*  
+         *  Event Handler for Summary button click
+         */
         private void SummaryButton_Click(object sender, EventArgs e)
         {
             ResultLabel.Text = "\n" + "Total Bookings Count : " + TotalBookings + "\n" + "Total Fees after Enrollment : " + TotalEnrollmentFees + "\n" + "Total Lodging Fees : " +
@@ -246,6 +273,9 @@ namespace L2PCourseApp
                         OptionalCost + "\n" + "Total Cost: " + "€" + BookingValue;
         }
 
+        /*  
+         *  Private function to check if any upgrades are selected 
+         */
         private decimal IsRadioButtonClicked()
         {
             if (MasterSuiteRB.Checked == true)
