@@ -54,6 +54,7 @@
             this.DisplayButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ResultLabel = new System.Windows.Forms.Label();
+            this.DiscountedPriceLabel = new System.Windows.Forms.Label();
             this.DetailPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -289,6 +290,7 @@
             this.ExitButton.TabIndex = 4;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // ClearButton
             // 
@@ -298,6 +300,7 @@
             this.ClearButton.TabIndex = 3;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // SummaryButton
             // 
@@ -307,6 +310,7 @@
             this.SummaryButton.TabIndex = 2;
             this.SummaryButton.Text = "Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
+            this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
             // BookButton
             // 
@@ -316,6 +320,7 @@
             this.BookButton.TabIndex = 1;
             this.BookButton.Text = "Book";
             this.BookButton.UseVisualStyleBackColor = true;
+            this.BookButton.Click += new System.EventHandler(this.BookButton_Click);
             // 
             // DisplayButton
             // 
@@ -330,6 +335,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Window;
+            this.panel3.Controls.Add(this.DiscountedPriceLabel);
             this.panel3.Controls.Add(this.ResultLabel);
             this.panel3.Location = new System.Drawing.Point(220, 488);
             this.panel3.Name = "panel3";
@@ -343,6 +349,14 @@
             this.ResultLabel.Name = "ResultLabel";
             this.ResultLabel.Size = new System.Drawing.Size(0, 25);
             this.ResultLabel.TabIndex = 4;
+            // 
+            // DiscountedPriceLabel
+            // 
+            this.DiscountedPriceLabel.AutoSize = true;
+            this.DiscountedPriceLabel.Location = new System.Drawing.Point(65, 42);
+            this.DiscountedPriceLabel.Name = "DiscountedPriceLabel";
+            this.DiscountedPriceLabel.Size = new System.Drawing.Size(0, 25);
+            this.DiscountedPriceLabel.TabIndex = 5;
             // 
             // Form1
             // 
@@ -394,6 +408,7 @@
         private System.Windows.Forms.Button DisplayButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label ResultLabel;
+        private System.Windows.Forms.Label DiscountedPriceLabel;
     }
 }
 

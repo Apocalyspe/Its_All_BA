@@ -17,12 +17,15 @@ namespace L2PCourseApp
             InitializeComponent();
         }
 
+        // Field level constants
         const string CSHARP_COURSE_1 = "C# Fundamental", CSHARP_COURSE_2 = "C# Basic for Beginners", CSHARP_COURSE_3 = "C# Intermediate", 
             CSHARP_COURSE_4 = "C# Advanced Topics", CSHARP_COURSE_5 = "ASP.NET with C# Part A", CSHARP_COURSE_6 = "ASP.NET with C# Part A";
 
         const string LOCATION1 = "Belmullet", LOCATION2 = "Clifden", LOCATION3 = "Cork", LOCATION4 = "Dublin",
             LOCATION5 = "Kilarney", LOCATION6 = "Letterkenny", LOCATION7 = "Sligo";
+
         const int DAYS_2 = 2, DAYS_4 = 4, DAYS_5 = 5; 
+
         const decimal COURSE_1_FEES = 900m, COURSE_2_FEES = 1500m,
             COURSE_3_FEES = 1800m, COURSE_4_FEES = 2300m, COURSE_5_6_FEES = 1250m;
 
@@ -32,22 +35,25 @@ namespace L2PCourseApp
         const decimal MASTER_UPGRADE_PRICE = 99.99m, EXECUTIVE_UPGRADE_PRICE = 69.99m, JUNIOR_UPGRADE_PRICE = 49.99m, 
             DIGI_CERT_PRICE = 39.99m, DISCOUNT = 0.075m;
 
-        int TotalBookings = 0, NumberOfDiscounts = 0;
-        decimal TotalBookingValue, TotalEnrollmentFees, TotalLodgingFees, TotalFee, TotalOptionsValue;
-        
+        // Field level variables
+        int TotalBookings = 0, TotalDiscountedBookings = 0, TotalAttendees = 0;
+        decimal TotalBookingValue = 0, TotalEnrollmentFees = 0, TotalLodgingFees= 0, TotalOptionsValue = 0;
+
+        // Display button variables for bookiing
+        string Location = "", Course = ""; int TrainingDays = 0;
+        int CourseIndex, LocationIndex, Attendees;
+        decimal PerCourseFees = 0, PerDayLodgingFees = 0, LodgingFees = 0, OptionalCost = 0, BookingValue = 0, EnrollmentCost = 0;
+        Boolean IsDiscountApplied = false; int DicountedBooking = 0;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            BookButton.Enabled = false;
+            SummaryButton.Enabled = false;
         }
 
         private void DisplayButton_Click(object sender, EventArgs e)
         {
-            string Location = "", Course = ""; int TrainingDays = 0;
-            int CourseIndex, LocationIndex, Attendees;
-            decimal PerCourseFees = 0, PerDayLodgingFees = 0, LodgingFees = 0, OptionalCost = 0, BookingValue = 0, EnrollmentCost = 0;
-            Boolean IsDiscountApplied = false;
-
 
             if (CourseListBox.SelectedIndex != -1)
             {
@@ -138,22 +144,30 @@ namespace L2PCourseApp
                             IsDiscountApplied = true;
                         }
 
-                        // Certificate check
-                        if (DigiCertCheckBox.Checked == true)
-                        {
-                            OptionalCost += Attendees * DIGI_CERT_PRICE;
-                        }
 
                         //Total booking value computation
                         if (IsDiscountApplied)
                         {
                             BookingValue = (EnrollmentCost + (Attendees * PerDayLodgingFees * TrainingDays) + OptionalCost) - 
                                 ((EnrollmentCost + (Attendees * PerDayLodgingFees * TrainingDays) + OptionalCost) * DISCOUNT);
-                        }else
+                            DicountedBooking += 1;
+                            DiscountedPriceLabel.Text = "Applicable discount on Booking value:" + "7.5%";
+                            IsDiscountApplied = false;
+                        }
+                        else
                         {
                             BookingValue = ((Attendees * PerCourseFees) + (Attendees * PerDayLodgingFees * TrainingDays) + OptionalCost);
                         }
-                        
+
+                        // Certificate check
+                        if (DigiCertCheckBox.Checked == true)
+                        {
+                            BookingValue += Attendees * DIGI_CERT_PRICE;
+                        }
+
+                        DetailPanel.Enabled = false;
+                        BookButton.Enabled = true;
+                        DisplayButton.Enabled = false;
 
                         ResultLabel.Text = "\n" + "Selected Course : " + Course + "\n" + "Location: " + Location + "\n" + "Training Duration : " +
                         TrainingDays + "\n" + "Enrollment Cost: " + "€" + EnrollmentCost.ToString() + "\n" + "Lodging Cost for booking : "
@@ -175,6 +189,61 @@ namespace L2PCourseApp
                 MessageBox.Show("Please select a Course to continue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 CourseListBox.Focus();
             }
+        }
+
+        private void BookButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to confirm the booking?", "User confirmation", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Selected Course : " + Course + "\n" + "Selected Location : " + Location + "\n" + "Total Booking value : " + BookingValue, "Booking Confirmed!!", MessageBoxButtons.OK);
+                
+                TotalBookings += 1; TotalBookingValue += BookingValue; TotalEnrollmentFees += EnrollmentCost; TotalLodgingFees += LodgingFees;
+                TotalOptionsValue += OptionalCost; TotalDiscountedBookings += DicountedBooking; TotalAttendees += Attendees;
+                ClearButton.PerformClick();
+                SummaryButton.Enabled = true;
+                
+            }
+            else
+            {
+                Location = ""; Course = ""; TrainingDays = 0;
+                CourseIndex = 0; LocationIndex = 0; Attendees = 0;
+                PerCourseFees = 0; PerDayLodgingFees = 0; LodgingFees = 0; OptionalCost = 0; BookingValue = 0; EnrollmentCost = 0;
+                IsDiscountApplied = false; DicountedBooking = 0;
+                ClearButton.PerformClick();
+            }
+
+            DetailPanel.Enabled = true;
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ResultLabel.Text = "";
+            DiscountedPriceLabel.Text = "";
+            AttendeesTextBox.Text = "";
+            DigiCertCheckBox.Checked = false;
+            MasterSuiteRB.Checked = false;
+            ExecutiveSuiteRB.Checked = false;
+            JuniorSuiteRB.Checked = false;
+            CourseListBox.SelectedIndex = -1;
+            LocationsListBox.SelectedIndex = -1;
+            BookButton.Enabled = false;
+            DetailPanel.Enabled = true;
+            DisplayButton.Enabled = true;
+        }
+
+        private void SummaryButton_Click(object sender, EventArgs e)
+        {
+            ResultLabel.Text = "\n" + "Total Bookings Count : " + TotalBookings + "\n" + "Total Fees after Enrollment : " + TotalEnrollmentFees + "\n" + "Total Lodging Fees : " +
+                        TotalLodgingFees + "\n" + "Total value of Options sold: " + "€" + OptionalCost.ToString() + "\n" + "Number of group Discounts given : "
+                        + TotalDiscountedBookings + "\n" + "Total Number of Attendees : " + TotalAttendees + "\n" + "Additional upgrades (Suite Upgrade/Certificate) sold: " + "€" +
+                        OptionalCost + "\n" + "Total Cost: " + "€" + BookingValue;
         }
 
         private decimal IsRadioButtonClicked()
