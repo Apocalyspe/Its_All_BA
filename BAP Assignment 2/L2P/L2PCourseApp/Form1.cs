@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* Student Name: Harsh Kulkarni
+ * Student ID: 22221739
+ * Date:11/10/2022
+ * Assignment: 2
+ * Assignment: Create an application for L2P company who have variety of C# courses with accomodation.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,7 +49,7 @@ namespace L2PCourseApp
         // Display button variables for booking
         string Location = "", Course = ""; int TrainingDays = 0;
         int CourseIndex, LocationIndex, Attendees;
-        decimal PerCourseFees = 0, PerDayLodgingFees = 0, LodgingFees = 0, OptionalCost = 0, BookingValue = 0, EnrollmentCost = 0;
+        decimal PerCourseFees = 0, PerDayLodgingFees = 0, LodgingFees = 0, OptionalCost = 0, BookingValue = 0, EnrollmentCost = 0, CertPrice = 0;
         Boolean IsDiscountApplied = false; int DicountedBooking = 0;
 
 
@@ -169,10 +176,12 @@ namespace L2PCourseApp
 
                         /* Certificate check if selected
                          * Assumption: Certificate cost is seperately added and 
-                         *             is not included in the discounted price if applied
+                         * is not included in the discounted price if applied
                         */
                         if (DigiCertCheckBox.Checked == true)
                         {
+                            CertPrice = Attendees * DIGI_CERT_PRICE;
+                            OptionalCost = +CertPrice;
                             BookingValue += Attendees * DIGI_CERT_PRICE;
                         }
 
@@ -215,7 +224,7 @@ namespace L2PCourseApp
             // Checking the user input for booking
             if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Selected Course : " + Course + "\n" + "Selected Location : " + Location + "\n" + "Total Booking value : " + BookingValue, "Booking Confirmed!!", MessageBoxButtons.OK);
+                MessageBox.Show("Selected Course : " + Course + "\n" + "Selected Location : " + Location + "\n" + "Total Booking value : " + BookingValue.ToString("C"), "Booking Confirmed!!", MessageBoxButtons.OK);
                 
                 TotalBookings += 1; TotalBookingValue += BookingValue; TotalEnrollmentFees += EnrollmentCost; TotalLodgingFees += LodgingFees;
                 TotalOptionsValue += OptionalCost; TotalDiscountedBookings += DicountedBooking; TotalAttendees += Attendees;

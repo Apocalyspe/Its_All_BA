@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.CourseListBox = new System.Windows.Forms.ListBox();
             this.DetailPanel = new System.Windows.Forms.Panel();
@@ -55,6 +56,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.DiscountedPriceLabel = new System.Windows.Forms.Label();
             this.ResultLabel = new System.Windows.Forms.Label();
+            this.DisplayBtnToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.BookbBtnToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.SummaryBtnToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ClearBtnToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ExitBtnToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.DetailPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -289,6 +295,7 @@
             this.ExitButton.Size = new System.Drawing.Size(221, 53);
             this.ExitButton.TabIndex = 4;
             this.ExitButton.Text = "Exit";
+            this.ExitBtnToolTip.SetToolTip(this.ExitButton, "Exit the application");
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
@@ -299,6 +306,7 @@
             this.ClearButton.Size = new System.Drawing.Size(221, 53);
             this.ClearButton.TabIndex = 3;
             this.ClearButton.Text = "Clear";
+            this.ClearBtnToolTip.SetToolTip(this.ClearButton, "Clears the application for next booking");
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
@@ -309,6 +317,7 @@
             this.SummaryButton.Size = new System.Drawing.Size(221, 53);
             this.SummaryButton.TabIndex = 2;
             this.SummaryButton.Text = "Summary";
+            this.SummaryBtnToolTip.SetToolTip(this.SummaryButton, "Click to view Company Summary");
             this.SummaryButton.UseVisualStyleBackColor = true;
             this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
@@ -319,6 +328,7 @@
             this.BookButton.Size = new System.Drawing.Size(221, 53);
             this.BookButton.TabIndex = 1;
             this.BookButton.Text = "Book";
+            this.BookbBtnToolTip.SetToolTip(this.BookButton, "Click to confirm the booking");
             this.BookButton.UseVisualStyleBackColor = true;
             this.BookButton.Click += new System.EventHandler(this.BookButton_Click);
             // 
@@ -329,6 +339,7 @@
             this.DisplayButton.Size = new System.Drawing.Size(221, 53);
             this.DisplayButton.TabIndex = 0;
             this.DisplayButton.Text = "Display";
+            this.DisplayBtnToolTip.SetToolTip(this.DisplayButton, "Displays the current booking values");
             this.DisplayButton.UseVisualStyleBackColor = true;
             this.DisplayButton.Click += new System.EventHandler(this.DisplayButton_Click);
             // 
@@ -410,6 +421,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label ResultLabel;
         private System.Windows.Forms.Label DiscountedPriceLabel;
+        private System.Windows.Forms.ToolTip DisplayBtnToolTip;
+        private System.Windows.Forms.ToolTip BookbBtnToolTip;
+        private System.Windows.Forms.ToolTip SummaryBtnToolTip;
+        private System.Windows.Forms.ToolTip ClearBtnToolTip;
+        private System.Windows.Forms.ToolTip ExitBtnToolTip;
     }
 }
 
